@@ -6,21 +6,17 @@ default:
 
 inventory:
   name: "&8Bookshelf ({page}/{pages})"
-  open-sound:
-    name: ENTITY_EXPERIENCE_ORB_PICKUP
-    volume: 1.0
-    pitch: 1.0
   page-change-sound:
-    name: ENTITY_CHICKEN_EGG
+    name: ITEM_BOOK_PAGE_TURN
     volume: 1.0
     pitch: 1.0
 
 close-inventory-item:
   type: BARRIER
-  name: "Close"
+  name: "&eClose"
   lore:
-  - "Click to close"
-  - "this inventory."
+  - "&7Click to close"
+  - "&7this inventory."
   enchantments: {}
   flags: []
 

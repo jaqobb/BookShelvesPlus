@@ -145,18 +145,14 @@ public class RealisticBookshelvesPlugin extends JavaPlugin {
 	}
 
 	public void openBookshelf(Player player, Bookshelf bookshelf, int page, boolean firstTime) {
-		boolean hasNext = true;
+		boolean hasNext = page < bookshelf.getPages();
 		int entriesPerPage = bookshelf.getRows() * 9;
 		int startIndex = (page - 1) * entriesPerPage;
 		int endIndex = startIndex + entriesPerPage;
 		if (endIndex >= bookshelf.getContents().length) {
 			endIndex = bookshelf.getContents().length;
-			hasNext = false;
 		}
-		int pages = (int) Math.ceil(bookshelf.getContents().length / (double) entriesPerPage);
-		if (pages == 0) {
-			pages = 1;
-		}
+		int pages = bookshelf.getPages();
 		Inventory inventory = Bukkit.createInventory(null, bookshelf.getRows() * 9 + 9, ChatColor.translateAlternateColorCodes('&', this.configuration.getString("inventory.name").replace("{page}", String.valueOf(page)).replace("{pages}", String.valueOf(pages))));
 		int index;
 		int slot;
@@ -176,9 +172,7 @@ public class RealisticBookshelvesPlugin extends JavaPlugin {
 			this.currentBookshelves.put(player.getUniqueId(), bookshelf);
 		});
 		player.openInventory(inventory);
-		if (firstTime) {
-			player.playSound(player.getLocation(), Sound.valueOf(this.configuration.getString("inventory.open-sound.name")), this.configuration.getFloat("inventory.open-sound.volume"), this.configuration.getFloat("inventory.open-sound.pitch"));
-		} else {
+		if (!firstTime) {
 			player.playSound(player.getLocation(), Sound.valueOf(this.configuration.getString("inventory.page-change-sound.name")), this.configuration.getFloat("inventory.page-change-sound.volume"), this.configuration.getFloat("inventory.page-change-sound.pitch"));
 		}
 	}
