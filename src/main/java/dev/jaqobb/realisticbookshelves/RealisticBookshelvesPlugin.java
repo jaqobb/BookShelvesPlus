@@ -1,6 +1,8 @@
 package dev.jaqobb.realisticbookshelves;
 
 import dev.jaqobb.realisticbookshelves.bookshelf.BookshelfRepository;
+import dev.jaqobb.realisticbookshelves.command.SetPagesCommand;
+import dev.jaqobb.realisticbookshelves.command.SetRowsCommand;
 import dev.jaqobb.realisticbookshelves.configuration.Configuration;
 import dev.jaqobb.realisticbookshelves.configuration.bookshelf.Bookshelves;
 import dev.jaqobb.realisticbookshelves.configuration.message.Messages;
@@ -19,6 +21,8 @@ public class RealisticBookshelvesPlugin extends JavaPlugin {
 		this.messages = new Messages(this, 1);
 		this.bookshelves = new Bookshelves(this);
 		this.bookshelfRepository = new BookshelfRepository(this);
+		this.getCommand("setrows").setExecutor(new SetRowsCommand(this));
+		this.getCommand("setpages").setExecutor(new SetPagesCommand(this));
 	}
 
 	public Configuration getConfiguration() {

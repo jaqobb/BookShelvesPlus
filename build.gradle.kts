@@ -1,4 +1,5 @@
 import net.mcparkour.migle.attributes.ApiVersion
+import net.mcparkour.migle.attributes.Command
 
 plugins {
 	`java-library`
@@ -36,7 +37,14 @@ migleBukkit {
 	description = project.description
 	author = "jaqobb"
 	website = "https://jaqobb.dev"
-	commands = mapOf()
+	commands = mapOf(
+		"setrows" to Command(
+			description = "Allows to set bookshelf's rows"
+		),
+		"setpages" to Command(
+			description = "Allows to set bookshelf's pages"
+		)
+	)
 }
 
 repositories {

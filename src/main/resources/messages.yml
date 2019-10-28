@@ -1,1 +1,10 @@
 version: 1
+
+not-player: "&cYou have to be player to do that."
+no-permissions: "&cYou don't have required permissions to do that."
+could-not-parse-argument-to-integer: "&cCouldn't parse {argument} to an integer."
+not-looking-at-bookshelf: "&cYou have to be looking at a bookshelf."
+set-pages-usage: "&cUsage: /setpages <pages>."
+wrong-pages-amount: "&cThe amount of pages has to be between 1 and 100."
+set-rows-usage: "&cUsage: /setrows <rows>."
+wrong-rows-amount: "&cThe amount of rows has to be between 1 and 6."
