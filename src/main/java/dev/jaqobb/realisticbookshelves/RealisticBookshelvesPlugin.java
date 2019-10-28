@@ -2,8 +2,6 @@ package dev.jaqobb.realisticbookshelves;
 
 import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
 import dev.jaqobb.realisticbookshelves.bookshelf.BookshelfRepository;
-import dev.jaqobb.realisticbookshelves.command.SetPagesCommand;
-import dev.jaqobb.realisticbookshelves.command.SetRowsCommand;
 import dev.jaqobb.realisticbookshelves.configuration.Configuration;
 import dev.jaqobb.realisticbookshelves.configuration.bookshelf.Bookshelves;
 import dev.jaqobb.realisticbookshelves.configuration.message.Messages;
@@ -102,8 +100,6 @@ public class RealisticBookshelvesPlugin extends JavaPlugin {
 			}
 			this.previousPageItem.setItemMeta(previousPageItemMeta);
 		}
-		this.getCommand("setrows").setExecutor(new SetRowsCommand(this));
-		this.getCommand("setpages").setExecutor(new SetPagesCommand(this));
 		this.getServer().getPluginManager().registerEvents(new PlayerBlockBreakListener(this), this);
 		this.getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
 		this.getServer().getPluginManager().registerEvents(new PlayerInventoryClickListener(this), this);
