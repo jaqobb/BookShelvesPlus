@@ -4,7 +4,6 @@ import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
 import dev.jaqobb.realisticbookshelves.bookshelf.BookshelfRepository;
 import dev.jaqobb.realisticbookshelves.configuration.Configuration;
 import dev.jaqobb.realisticbookshelves.configuration.bookshelf.Bookshelves;
-import dev.jaqobb.realisticbookshelves.configuration.message.Messages;
 import dev.jaqobb.realisticbookshelves.listener.PlayerBlockBreakListener;
 import dev.jaqobb.realisticbookshelves.listener.PlayerInteractListener;
 import dev.jaqobb.realisticbookshelves.listener.PlayerInventoryClickListener;
@@ -28,7 +27,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class RealisticBookshelvesPlugin extends JavaPlugin {
 
 	private Configuration configuration;
-	private Messages messages;
 	private Bookshelves bookshelves;
 	private BookshelfRepository bookshelfRepository;
 	private ItemStack closeInventoryItem;
@@ -40,7 +38,6 @@ public class RealisticBookshelvesPlugin extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		this.configuration = new Configuration(this, 1);
-		this.messages = new Messages(this, 1);
 		this.bookshelves = new Bookshelves(this);
 		this.bookshelfRepository = new BookshelfRepository(this);
 		{
@@ -108,10 +105,6 @@ public class RealisticBookshelvesPlugin extends JavaPlugin {
 
 	public Configuration getConfiguration() {
 		return this.configuration;
-	}
-
-	public Messages getMessages() {
-		return this.messages;
 	}
 
 	public Bookshelves getBookshelves() {
