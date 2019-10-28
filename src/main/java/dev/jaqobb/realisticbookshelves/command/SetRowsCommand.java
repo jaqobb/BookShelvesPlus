@@ -1,12 +1,14 @@
 package dev.jaqobb.realisticbookshelves.command;
 
 import dev.jaqobb.realisticbookshelves.RealisticBookshelvesPlugin;
+import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class SetRowsCommand implements CommandExecutor {
 
@@ -65,6 +67,13 @@ public class SetRowsCommand implements CommandExecutor {
 				.target(player)
 				.send();
 			return true;
+		}
+		Bookshelf bookshelf = this.plugin.getBookshelfRepository().get(block.getLocation());
+		if (bookshelf == null) {
+			bookshelf = new Bookshelf(block.getLocation(), rows, this.plugin.getConfiguration().getInt("default.pages"), new ItemStack[0]);
+		} else {
+			// TODO: Check if by changing rows, current items can still fit in.
+			bookshelf.setRows(rows);
 		}
 		return true;
 	}
