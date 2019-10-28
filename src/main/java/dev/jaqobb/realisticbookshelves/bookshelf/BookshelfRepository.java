@@ -26,6 +26,14 @@ public class BookshelfRepository {
 		return this.bookshelves.get(location);
 	}
 
+	public void add(Bookshelf bookshelf) {
+		this.bookshelves.put(bookshelf.getLocation(), bookshelf);
+	}
+
+	public void remove(Bookshelf bookshelf) {
+		this.bookshelves.remove(bookshelf.getLocation());
+	}
+
 	@SuppressWarnings("unchecked")
 	public void load() {
 		for (Bookshelf bookshelf : (List<Bookshelf>) this.plugin.getBookshelves().getList("bookshelves")) {

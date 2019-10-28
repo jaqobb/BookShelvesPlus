@@ -71,10 +71,30 @@ public class SetPagesCommand implements CommandExecutor {
 		Bookshelf bookshelf = this.plugin.getBookshelfRepository().get(block.getLocation());
 		if (bookshelf == null) {
 			bookshelf = new Bookshelf(block.getLocation(), this.plugin.getConfiguration().getInt("default.rows"), pages, new ItemStack[0]);
+			this.plugin.getBookshelfRepository().add(bookshelf);
 		} else {
-			// TODO: Check if by changing pages, current items can still fit in.
-			bookshelf.setPages(pages);
+			if (bookshelf.getPages() < pages) {
+				bookshelf.setPages(pages);
+			} else {
+				int totalSpace = bookshelf.getRows() * 9 * pages;
+				int spaceTaken = bookshelf.getContents().length;
+				if (totalSpace < spaceTaken) {
+					this.plugin.getMessages().getChatMessage("cannot-set-pages-amount")
+						.color()
+						.target(player)
+						.send();
+					return true;
+				} else {
+					bookshelf.setPages(pages);
+				}
+			}
 		}
+		this.plugin.getBookshelfRepository().save();
+		this.plugin.getMessages().getChatMessage("pages-set")
+			.color()
+			.transform(message -> message.replace("{pages}", String.valueOf(pages)))
+			.target(player)
+			.send();
 		return true;
 	}
 }

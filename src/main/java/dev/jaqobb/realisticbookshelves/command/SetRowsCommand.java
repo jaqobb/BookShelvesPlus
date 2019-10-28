@@ -71,10 +71,30 @@ public class SetRowsCommand implements CommandExecutor {
 		Bookshelf bookshelf = this.plugin.getBookshelfRepository().get(block.getLocation());
 		if (bookshelf == null) {
 			bookshelf = new Bookshelf(block.getLocation(), rows, this.plugin.getConfiguration().getInt("default.pages"), new ItemStack[0]);
+			this.plugin.getBookshelfRepository().add(bookshelf);
 		} else {
-			// TODO: Check if by changing rows, current items can still fit in.
-			bookshelf.setRows(rows);
+			if (bookshelf.getRows() < rows) {
+				bookshelf.setRows(rows);
+			} else {
+				int totalSpace = rows * 9 * bookshelf.getPages();
+				int spaceTaken = bookshelf.getContents().length;
+				if (totalSpace < spaceTaken) {
+					this.plugin.getMessages().getChatMessage("cannot-set-rows-amount")
+						.color()
+						.target(player)
+						.send();
+					return true;
+				} else {
+					bookshelf.setRows(rows);
+				}
+			}
 		}
+		this.plugin.getBookshelfRepository().save();
+		this.plugin.getMessages().getChatMessage("rows-set")
+			.color()
+			.transform(message -> message.replace("{rows}", String.valueOf(rows)))
+			.target(player)
+			.send();
 		return true;
 	}
 }
