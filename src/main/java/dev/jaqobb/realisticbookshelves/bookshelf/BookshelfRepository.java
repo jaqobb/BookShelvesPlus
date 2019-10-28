@@ -1,7 +1,7 @@
 package dev.jaqobb.realisticbookshelves.bookshelf;
 
 import dev.jaqobb.realisticbookshelves.RealisticBookshelvesPlugin;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -43,7 +43,7 @@ public class BookshelfRepository {
 	}
 
 	public void save() {
-		this.plugin.getBookshelves().set("bookshelves", Arrays.asList(( this.bookshelves.values())));
+		this.plugin.getBookshelves().set("bookshelves", new ArrayList<>(( this.bookshelves.values())));
 		this.plugin.getBookshelves().save();
 	}
 }

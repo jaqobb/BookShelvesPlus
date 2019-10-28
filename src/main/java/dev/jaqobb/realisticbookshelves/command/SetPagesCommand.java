@@ -70,7 +70,7 @@ public class SetPagesCommand implements CommandExecutor {
 		}
 		Bookshelf bookshelf = this.plugin.getBookshelfRepository().get(block.getLocation());
 		if (bookshelf == null) {
-			bookshelf = new Bookshelf(block.getLocation(), this.plugin.getConfiguration().getInt("default.rows"), pages, new ItemStack[0]);
+			bookshelf = new Bookshelf(block.getLocation(), this.plugin.getConfiguration().getInt("default.rows"), pages, new ItemStack[this.plugin.getConfiguration().getInt("default.rows") * 9 * pages]);
 			this.plugin.getBookshelfRepository().add(bookshelf);
 		} else {
 			if (bookshelf.getPages() < pages) {

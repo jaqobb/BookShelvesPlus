@@ -35,9 +35,10 @@ public class PlayerInteractListener implements Listener {
 			}
 			return;
 		}
+		event.setCancelled(true);
 		Bookshelf bookshelf = this.plugin.getBookshelfRepository().get(block.getLocation());
 		if (bookshelf == null) {
-			bookshelf = new Bookshelf(block.getLocation(), this.plugin.getConfiguration().getInt("default.rows"), this.plugin.getConfiguration().getInt("default.pages"), new ItemStack[0]);
+			bookshelf = new Bookshelf(block.getLocation(), this.plugin.getConfiguration().getInt("default.rows"), this.plugin.getConfiguration().getInt("default.pages"), new ItemStack[this.plugin.getConfiguration().getInt("default.rows") * 9 * this.plugin.getConfiguration().getInt("default.pages")]);
 			this.plugin.getBookshelfRepository().add(bookshelf);
 		}
 		this.plugin.openBookshelf(event.getPlayer(), bookshelf, 1, true);

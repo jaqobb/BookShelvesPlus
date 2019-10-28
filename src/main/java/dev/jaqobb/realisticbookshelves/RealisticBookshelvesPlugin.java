@@ -7,6 +7,7 @@ import dev.jaqobb.realisticbookshelves.command.SetRowsCommand;
 import dev.jaqobb.realisticbookshelves.configuration.Configuration;
 import dev.jaqobb.realisticbookshelves.configuration.bookshelf.Bookshelves;
 import dev.jaqobb.realisticbookshelves.configuration.message.Messages;
+import dev.jaqobb.realisticbookshelves.listener.PlayerBlockBreakListener;
 import dev.jaqobb.realisticbookshelves.listener.PlayerInteractListener;
 import dev.jaqobb.realisticbookshelves.listener.PlayerInventoryClickListener;
 import dev.jaqobb.realisticbookshelves.listener.PlayerInventoryCloseListener;
@@ -103,6 +104,7 @@ public class RealisticBookshelvesPlugin extends JavaPlugin {
 		}
 		this.getCommand("setrows").setExecutor(new SetRowsCommand(this));
 		this.getCommand("setpages").setExecutor(new SetPagesCommand(this));
+		this.getServer().getPluginManager().registerEvents(new PlayerBlockBreakListener(this), this);
 		this.getServer().getPluginManager().registerEvents(new PlayerInteractListener(this), this);
 		this.getServer().getPluginManager().registerEvents(new PlayerInventoryClickListener(this), this);
 		this.getServer().getPluginManager().registerEvents(new PlayerInventoryCloseListener(this), this);
