@@ -1,4 +1,4 @@
-package dev.jaqobb.skeletonspigot.configuration;
+package dev.jaqobb.realisticbookshelves.configuration;
 
 import java.io.File;
 import java.io.InputStream;

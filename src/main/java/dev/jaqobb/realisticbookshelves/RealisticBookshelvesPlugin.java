@@ -1,10 +1,10 @@
-package dev.jaqobb.skeletonspigot;
+package dev.jaqobb.realisticbookshelves;
 
-import dev.jaqobb.skeletonspigot.configuration.Configuration;
-import dev.jaqobb.skeletonspigot.configuration.message.Messages;
+import dev.jaqobb.realisticbookshelves.configuration.Configuration;
+import dev.jaqobb.realisticbookshelves.configuration.message.Messages;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class SkeletonSpigotPlugin extends JavaPlugin {
+public class RealisticBookshelvesPlugin extends JavaPlugin {
 
 	private Configuration configuration;
 	private Messages messages;

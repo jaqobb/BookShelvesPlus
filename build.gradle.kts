@@ -7,7 +7,7 @@ plugins {
 
 group = "dev.jaqobb"
 version = "1.0.0"
-description = "Skeleton project for Spigot plugins"
+description = "Minecraft plugin that makes bookshelves more realistic"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_1_8
@@ -33,9 +33,6 @@ migleBukkit {
 	main = "${project.group}.${project.name.toLowerCase().replace("-", "")}.${newName}Plugin"
 	version = project.version as String
 	apiVersion = ApiVersion.VERSION_1_14
-	depend = listOf()
-	softDepend = listOf()
-	loadBefore = listOf()
 	description = project.description
 	author = "jaqobb"
 	website = "https://jaqobb.dev"

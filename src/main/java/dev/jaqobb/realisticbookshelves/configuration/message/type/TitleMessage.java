@@ -1,4 +1,4 @@
-package dev.jaqobb.skeletonspigot.configuration.message.type;
+package dev.jaqobb.realisticbookshelves.configuration.message.type;
 
 import java.util.ArrayList;
 import java.util.Arrays;
