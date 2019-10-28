@@ -30,7 +30,7 @@ public final class ItemUtils {
 			}
 			return Base64Coder.encodeLines(arrayOutputStream.toByteArray());
 		} catch (Exception exception) {
-			throw new RuntimeException("Could not encode ItemStacks", exception);
+			throw new RuntimeException("Could not encode ItemStack array", exception);
 		}
 	}
 
@@ -50,7 +50,7 @@ public final class ItemUtils {
 			}
 			return items;
 		} catch (Exception exception) {
-			throw new RuntimeException("Could not decode ItemStacks", exception);
+			throw new RuntimeException("Could not decode ItemStack array", exception);
 		}
 	}
 }

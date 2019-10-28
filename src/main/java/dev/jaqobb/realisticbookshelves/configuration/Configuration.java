@@ -1,5 +1,6 @@
 package dev.jaqobb.realisticbookshelves.configuration;
 
+import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,11 +16,16 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.Vector;
 
 public class Configuration {
+
+	static {
+		ConfigurationSerialization.registerClass(Bookshelf.class, "Bookshelf");
+	}
 
 	private JavaPlugin plugin;
 	private int currentVersion;

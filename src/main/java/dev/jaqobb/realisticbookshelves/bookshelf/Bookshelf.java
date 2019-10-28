@@ -1,12 +1,17 @@
 package dev.jaqobb.realisticbookshelves.bookshelf;
 
+import dev.jaqobb.realisticbookshelves.util.ItemUtils;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.bukkit.Location;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.inventory.ItemStack;
 
-public class Bookshelf {
+public class Bookshelf implements ConfigurationSerializable {
+
 
 	private Location location;
 	private int rows;
@@ -46,6 +51,25 @@ public class Bookshelf {
 
 	public void setContents(ItemStack[] contents) {
 		this.contents = contents;
+	}
+
+	@Override
+	public Map<String, Object> serialize() {
+		Map<String, Object> data = new HashMap<>(4);
+		data.put("location", this.location.serialize());
+		data.put("rows", this.rows);
+		data.put("pages", this.pages);
+		data.put("contents", ItemUtils.itemStackArrayToBase64(this.contents));
+		return data;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static Bookshelf deserialize(Map<String, Object> data) {
+		Location location = Location.deserialize((Map<String, Object>) data.get("location"));
+		int rows = (int) data.get("rows");
+		int pages = (int) data.get("pages");
+		ItemStack[] contents = ItemUtils.itemStackArrayFromBase64((String) data.get("contents"));
+		return new Bookshelf(location, rows, pages, contents);
 	}
 
 	@Override
