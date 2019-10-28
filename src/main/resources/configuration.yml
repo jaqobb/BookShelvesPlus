@@ -3,3 +3,41 @@ version: 1
 default:
   rows: 3
   pages: 2
+
+inventory:
+  name: "&8Bookshelf ({page}/{pages})"
+  open-sound:
+    name: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 1.0
+    pitch: 1.0
+  page-change-sound:
+    name: ENTITY_CHICKEN_EGG
+    volume: 1.0
+    pitch: 1.0
+
+close-inventory-item:
+  type: BARRIER
+  name: "Close"
+  lore:
+  - "Click to close"
+  - "this inventory."
+  enchantments: {}
+  flags: []
+
+next-page-item:
+  type: ARROW
+  name: "&eNext Page"
+  lore:
+  - "&7Click to go to"
+  - "&7the next page."
+  enchantments: {}
+  flags: []
+
+previous-page-item:
+  type: ARROW
+  name: "&ePrevious Page"
+  lore:
+  - "&7Click to go to"
+  - "&7the previous page."
+  enchantments: {}
+  flags: []

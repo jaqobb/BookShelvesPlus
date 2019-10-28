@@ -61,7 +61,7 @@ public class SetRowsCommand implements CommandExecutor {
 				.send();
 			return true;
 		}
-		if (rows < 1 || rows > 6) {
+		if (rows < 1 || rows > 5) {
 			this.plugin.getMessages().getChatMessage("wrong-rows-amount")
 				.color()
 				.target(player)
