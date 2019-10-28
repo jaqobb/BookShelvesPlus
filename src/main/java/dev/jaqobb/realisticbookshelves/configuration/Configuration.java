@@ -623,7 +623,7 @@ public class Configuration {
 				oldFile = new File(this.plugin.getDataFolder(), this.fileName + oldFileSuffix + ".yml");
 			}
 			if (this.currentVersion != -1) {
-				if (!this.fileConfiguration.isSet("version") || !this.fileConfiguration.isInt("version") || this.fileConfiguration.getInt("version") != this.currentVersion) {
+				if (!this.fileConfiguration.isSet("version") || !this.fileConfiguration.isInt("version") || (this.fileConfiguration.getInt("version") != -1 && this.fileConfiguration.getInt("version") != this.currentVersion)) {
 					this.plugin.getLogger().log(Level.INFO, this.fileName + ".yml file seems to be outdated, updating...");
 					if (!this.file.renameTo(oldFile)) {
 						this.plugin.getLogger().log(Level.WARNING, "Could not rename outdated " + this.fileName + ".yml file, update stopped.");
