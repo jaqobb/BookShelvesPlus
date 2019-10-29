@@ -1,6 +1,6 @@
-package dev.jaqobb.realisticbookshelves.configuration.bookshelf;
+package dev.jaqobb.bookshelvesplus.configuration.bookshelf;
 
-import dev.jaqobb.realisticbookshelves.configuration.Configuration;
+import dev.jaqobb.bookshelvesplus.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Bookshelves extends Configuration {

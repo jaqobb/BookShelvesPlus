@@ -1,4 +1,4 @@
-package dev.jaqobb.realisticbookshelves.util;
+package dev.jaqobb.bookshelvesplus.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

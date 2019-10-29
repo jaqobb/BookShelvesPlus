@@ -1,7 +1,7 @@
-package dev.jaqobb.realisticbookshelves.listener;
+package dev.jaqobb.bookshelvesplus.listener;
 
-import dev.jaqobb.realisticbookshelves.RealisticBookshelvesPlugin;
-import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
+import dev.jaqobb.bookshelvesplus.BookShelvesPlusPlugin;
+import dev.jaqobb.bookshelvesplus.bookshelf.Bookshelf;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -13,9 +13,9 @@ import org.bukkit.inventory.ItemStack;
 
 public class PlayerInteractListener implements Listener {
 
-	private RealisticBookshelvesPlugin plugin;
+	private BookShelvesPlusPlugin plugin;
 
-	public PlayerInteractListener(RealisticBookshelvesPlugin plugin) {
+	public PlayerInteractListener(BookShelvesPlusPlugin plugin) {
 		this.plugin = plugin;
 	}
 

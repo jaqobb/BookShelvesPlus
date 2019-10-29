@@ -1,7 +1,7 @@
-package dev.jaqobb.realisticbookshelves.listener;
+package dev.jaqobb.bookshelvesplus.listener;
 
-import dev.jaqobb.realisticbookshelves.RealisticBookshelvesPlugin;
-import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
+import dev.jaqobb.bookshelvesplus.BookShelvesPlusPlugin;
+import dev.jaqobb.bookshelvesplus.bookshelf.Bookshelf;
 import java.util.UUID;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -10,9 +10,9 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 
 public class PlayerInventoryCloseListener implements Listener {
 
-	private RealisticBookshelvesPlugin plugin;
+	private BookShelvesPlusPlugin plugin;
 
-	public PlayerInventoryCloseListener(RealisticBookshelvesPlugin plugin) {
+	public PlayerInventoryCloseListener(BookShelvesPlusPlugin plugin) {
 		this.plugin = plugin;
 	}
 

@@ -1,6 +1,6 @@
-package dev.jaqobb.realisticbookshelves.configuration;
+package dev.jaqobb.bookshelvesplus.configuration;
 
-import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
+import dev.jaqobb.bookshelvesplus.bookshelf.Bookshelf;
 import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;

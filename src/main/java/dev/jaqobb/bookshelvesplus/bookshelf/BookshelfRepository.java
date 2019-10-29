@@ -1,6 +1,6 @@
-package dev.jaqobb.realisticbookshelves.bookshelf;
+package dev.jaqobb.bookshelvesplus.bookshelf;
 
-import dev.jaqobb.realisticbookshelves.RealisticBookshelvesPlugin;
+import dev.jaqobb.bookshelvesplus.BookShelvesPlusPlugin;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -11,10 +11,10 @@ import org.bukkit.Location;
 
 public class BookshelfRepository {
 
-	private RealisticBookshelvesPlugin plugin;
+	private BookShelvesPlusPlugin plugin;
 	private Map<Location, Bookshelf> bookshelves = new HashMap<>(100, 0.85F);
 
-	public BookshelfRepository(RealisticBookshelvesPlugin plugin) {
+	public BookshelfRepository(BookShelvesPlusPlugin plugin) {
 		this.plugin = plugin;
 		this.load();
 	}

@@ -1,13 +1,13 @@
-package dev.jaqobb.realisticbookshelves;
+package dev.jaqobb.bookshelvesplus;
 
-import dev.jaqobb.realisticbookshelves.bookshelf.Bookshelf;
-import dev.jaqobb.realisticbookshelves.bookshelf.BookshelfRepository;
-import dev.jaqobb.realisticbookshelves.configuration.Configuration;
-import dev.jaqobb.realisticbookshelves.configuration.bookshelf.Bookshelves;
-import dev.jaqobb.realisticbookshelves.listener.PlayerBlockBreakListener;
-import dev.jaqobb.realisticbookshelves.listener.PlayerInteractListener;
-import dev.jaqobb.realisticbookshelves.listener.PlayerInventoryClickListener;
-import dev.jaqobb.realisticbookshelves.listener.PlayerInventoryCloseListener;
+import dev.jaqobb.bookshelvesplus.bookshelf.Bookshelf;
+import dev.jaqobb.bookshelvesplus.bookshelf.BookshelfRepository;
+import dev.jaqobb.bookshelvesplus.configuration.Configuration;
+import dev.jaqobb.bookshelvesplus.configuration.bookshelf.Bookshelves;
+import dev.jaqobb.bookshelvesplus.listener.PlayerBlockBreakListener;
+import dev.jaqobb.bookshelvesplus.listener.PlayerInteractListener;
+import dev.jaqobb.bookshelvesplus.listener.PlayerInventoryClickListener;
+import dev.jaqobb.bookshelvesplus.listener.PlayerInventoryCloseListener;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -24,7 +24,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class RealisticBookshelvesPlugin extends JavaPlugin {
+public class BookShelvesPlusPlugin extends JavaPlugin {
 
 	private Configuration configuration;
 	private Bookshelves bookshelves;

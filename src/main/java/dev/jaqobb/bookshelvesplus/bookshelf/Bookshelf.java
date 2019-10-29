@@ -1,6 +1,6 @@
-package dev.jaqobb.realisticbookshelves.bookshelf;
+package dev.jaqobb.bookshelvesplus.bookshelf;
 
-import dev.jaqobb.realisticbookshelves.util.ItemUtils;
+import dev.jaqobb.bookshelvesplus.util.ItemUtils;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.commons.lang.builder.EqualsBuilder;
