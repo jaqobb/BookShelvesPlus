@@ -18,7 +18,7 @@ defaultTasks("clean", "build")
 
 migleBukkit {
 	name = project.name
-	main = "${project.group}.${project.name.toLowerCase().replace("-", "")}.${project.name}Plugin"
+	main = "${project.group}.${project.name.toLowerCase()}.${project.name}Plugin"
 	version = project.version as String
 	apiVersion = ApiVersion.VERSION_1_14
 	description = project.description
