@@ -1,4 +1,4 @@
-# BookShelvesPlus
+BookShelvesPlus
 =========
 
 Minecraft plugin that makes bookshelves more realistic.
